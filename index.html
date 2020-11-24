@@ -18,8 +18,10 @@
         
         <div class="cds-container">
             <ul class="cds-list" v-if="cds.length > 0">
-                <li v-for="cd in cds">
-                    <img :src="cd.poster" :alt="`${cd.title} Album logo`" class="cover">
+                <li class="cd" v-for="cd in cds">
+                    <div class="cover">
+                        <img :src="cd.poster" :alt="`${cd.title} Album logo`">
+                    </div>
                     <h2 class="title">{{ cd.title }}</h2>
                     <h3 class="author">{{ cd.author }}</h3>
                     <span class="year">{{ cd.year }}</span>
