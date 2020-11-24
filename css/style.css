@@ -42,3 +42,17 @@ img {
 .cover img {
     min-height: 170px;
 }
+
+.cd .title {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.cd > * {
+    margin: 10px 0;
+}
+
+.genre-filter {
+    text-align: center;
+    margin-top: 20px;
+}

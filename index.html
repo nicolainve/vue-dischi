@@ -15,6 +15,21 @@
         <header class="app-header">
             <img src="./img/logo.png" alt="Spotify logo">
         </header>
+
+        <div class="genre-filter">
+            <label for="filter">Genre</label>
+            <select 
+                v-model="actualGenre"
+                id="filter"
+                @change="filterGenre"
+            >
+                <option value="all">All</option>
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="metal">Metal</option>
+                <option value="jazz">Jazz</option>
+            </select>
+        </div>
         
         <div class="cds-container">
             <ul class="cds-list" v-if="cds.length > 0">
@@ -24,8 +39,8 @@
                     </div>
                     <h2 class="title">{{ cd.title }}</h2>
                     <h3 class="author">{{ cd.author }}</h3>
-                    <span class="year">{{ cd.year }}</span>
-                    <span class="genre">{{ cd.genre }}</span>
+                    <div class="year">{{ cd.year }}</div>
+                    <div class="genre">{{ cd.genre }}</div>
                 </li>
             </ul>
             <h2 v-else class="loader">Loading email</h2>
