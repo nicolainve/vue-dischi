@@ -12,7 +12,22 @@
 <body>
 
     <div id="app">
+        <header class="app-header">
+            <img src="./img/logo.png" alt="Spotify logo">
+        </header>
         
+        <div class="cds-container">
+            <ul class="cds-list" v-if="cds.length > 0">
+                <li v-for="cd in cds">
+                    <img :src="cd.poster" :alt="`${cd.title} Album logo`" class="cover">
+                    <h2 class="title">{{ cd.title }}</h2>
+                    <h3 class="author">{{ cd.author }}</h3>
+                    <span class="year">{{ cd.year }}</span>
+                    <span class="genre">{{ cd.genre }}</span>
+                </li>
+            </ul>
+            <h2 v-else class="loader">Loading email</h2>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
